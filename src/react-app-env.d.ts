@@ -1,1 +1,0 @@
-/// <reference types="tezos-scripts" />
