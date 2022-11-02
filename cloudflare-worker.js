@@ -31,6 +31,7 @@ export default {
       const pirates = []
       listing.forEach((el) => {
         const name = el?.assetInformation?.nName
+        const rank = el?.assetInformation?.nRank
         const image = el?.assetInformation?.nProps?.media_url
         const price = el?.assetInformation?.listing?.price
         const combat = el?.assetInformation?.nProps?.properties?.combat
@@ -48,6 +49,7 @@ export default {
         if (distance)
           pirates.push({
             name,
+            rank,
             image,
             price,
             combat,
@@ -60,9 +62,7 @@ export default {
   
       pirates.sort((a, b) => a.distance - b.distance)
   
-      console.log(pirates[0], pirates[1], pirates[2])
-  
-      return new Response(JSON.stringify({ pirates: [pirates[0], pirates[1], pirates[2]] }), {
+      return new Response(JSON.stringify({ pirates: [pirates[0], pirates[1], pirates[2], pirates[3], pirates[4]] }), {
         headers: { 'Content-Type': 'application/json' },
       })
     }
