@@ -9,7 +9,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 10s ease-in-out;
   }
 }
 
@@ -29,10 +29,42 @@
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  0% {
+    transform: rotate(-10deg);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: rotate(10deg);
   }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+
+.App-connected,
+.App-not-connected {
+  margin: 50px auto 0 auto;
+}
+
+.App-button {
+  height: 50px;
+  background: #5557ed;
+  color: #fff;
+  box-shadow: -10px -10px 20px rgba(8, 21, 45, 0.4),
+    5px 5px 15px rgba(5, 12, 27, 0.6);
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 50px;
+  padding: 0 20px !important;
+  margin: 20px auto 0 auto !important;
+  max-width: 280px;
+  border: none;
+}
+
+.App-button:disabled,
+.App-button[disabled] {
+  background: #4244bb;
+  cursor: default;
 }
